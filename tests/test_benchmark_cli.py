@@ -39,5 +39,7 @@ def test_benchmark_cli_writes_json_report(tmp_path: Path) -> None:
     )
 
     assert result.returncode == 0, result.stderr
-    report = json.loads(output_path.read_text(encoding="utf-8"))
+    report_bytes = output_path.read_bytes()
+    assert b"\r\n" not in report_bytes
+    report = json.loads(report_bytes.decode("utf-8"))
     assert report["summary"]["total_tasks"] == 5

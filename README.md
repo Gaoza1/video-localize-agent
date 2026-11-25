@@ -98,7 +98,7 @@ The offline benchmark runs 12 deterministic tasks against the real workflow:
 The latest run completed 8 of 12 tasks. Four failures were intentionally
 unrecoverable, and every recoverable task completed. Among completed tasks,
 2 of 8 required a manual subtitle edit, for a 25.0% manual rework rate.
-Transient tool failures recovered in an average of 39.81 ms.
+Transient tool failures recovered in about 39 ms.
 
 Failure events were logged as 8 constraint repairs, 3 transient tool
 failures, 2 configuration errors, and 2 persistent tool failures. Recovery

@@ -18,10 +18,10 @@
       "configuration_error": 13.33,
       "persistent_tool_failure": 13.33
     },
-    "average_recovery_ms": 10.86,
+    "average_recovery_ms": 10.63,
     "average_recovery_ms_by_type": {
       "constraint_repair": 0.0,
-      "transient_tool": 39.81
+      "transient_tool": 38.97
     }
   },
   "results": [
@@ -69,7 +69,7 @@
         },
         {
           "kind": "transient_tool",
-          "recovery_ms": 42.786
+          "recovery_ms": 34.248
         }
       ]
     },
@@ -84,7 +84,7 @@
         },
         {
           "kind": "transient_tool",
-          "recovery_ms": 33.654
+          "recovery_ms": 40.724
         }
       ]
     },
@@ -99,7 +99,7 @@
         },
         {
           "kind": "transient_tool",
-          "recovery_ms": 43.0
+          "recovery_ms": 41.948
         }
       ]
     },
