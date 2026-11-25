@@ -75,8 +75,39 @@ are persisted in `./data`.
 python -m pytest -q
 ```
 
-The test suite covers SRT round-tripping, timing validation, tool retries, demo
-workflow state, human approval, API creation, and recent-run queries.
+The test suite covers SRT round-tripping, timing validation, tool retries,
+demo workflow state, human approval, API creation, recent-run queries, metric
+aggregation, and benchmark fault injection.
+
+## Fault-injection benchmark
+
+```bash
+python scripts/benchmark_agent.py
+```
+
+The offline benchmark runs 12 deterministic tasks against the real workflow:
+
+| Scenario | Runs |
+| --- | ---: |
+| Baseline | 3 |
+| Transient tool failure, then recovery | 3 |
+| Human review edit before approval | 2 |
+| Missing ASR configuration | 2 |
+| Persistent tool failure | 2 |
+
+The latest run completed 8 of 12 tasks. Four failures were intentionally
+unrecoverable, and every recoverable task completed. Among completed tasks,
+2 of 8 required a manual subtitle edit, for a 25.0% manual rework rate.
+Transient tool failures recovered in an average of 39.81 ms.
+
+Failure events were logged as 8 constraint repairs, 3 transient tool
+failures, 2 configuration errors, and 2 persistent tool failures. Recovery
+time is measured from the start of a failed tool call to the successful retry;
+configuration and persistent failures do not contribute a recovery time.
+
+These are seeded offline benchmark results, not production traffic metrics.
+The complete machine-readable report is stored in
+[`docs/benchmark-results.json`](docs/benchmark-results.json).
 
 ## API
 

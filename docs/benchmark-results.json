@@ -1,0 +1,183 @@
+{
+  "summary": {
+    "total_tasks": 12,
+    "completed_tasks": 8,
+    "success_rate_pct": 66.67,
+    "manual_rework_tasks": 2,
+    "manual_rework_rate_pct": 25.0,
+    "failure_event_count": 15,
+    "failure_type_counts": {
+      "constraint_repair": 8,
+      "transient_tool": 3,
+      "configuration_error": 2,
+      "persistent_tool_failure": 2
+    },
+    "failure_type_distribution_pct": {
+      "constraint_repair": 53.33,
+      "transient_tool": 20.0,
+      "configuration_error": 13.33,
+      "persistent_tool_failure": 13.33
+    },
+    "average_recovery_ms": 10.86,
+    "average_recovery_ms_by_type": {
+      "constraint_repair": 0.0,
+      "transient_tool": 39.81
+    }
+  },
+  "results": [
+    {
+      "scenario": "baseline",
+      "completed": true,
+      "manually_reworked": false,
+      "failures": [
+        {
+          "kind": "constraint_repair",
+          "recovery_ms": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "baseline",
+      "completed": true,
+      "manually_reworked": false,
+      "failures": [
+        {
+          "kind": "constraint_repair",
+          "recovery_ms": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "baseline",
+      "completed": true,
+      "manually_reworked": false,
+      "failures": [
+        {
+          "kind": "constraint_repair",
+          "recovery_ms": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "transient_retry",
+      "completed": true,
+      "manually_reworked": false,
+      "failures": [
+        {
+          "kind": "constraint_repair",
+          "recovery_ms": 0.0
+        },
+        {
+          "kind": "transient_tool",
+          "recovery_ms": 42.786
+        }
+      ]
+    },
+    {
+      "scenario": "transient_retry",
+      "completed": true,
+      "manually_reworked": false,
+      "failures": [
+        {
+          "kind": "constraint_repair",
+          "recovery_ms": 0.0
+        },
+        {
+          "kind": "transient_tool",
+          "recovery_ms": 33.654
+        }
+      ]
+    },
+    {
+      "scenario": "transient_retry",
+      "completed": true,
+      "manually_reworked": false,
+      "failures": [
+        {
+          "kind": "constraint_repair",
+          "recovery_ms": 0.0
+        },
+        {
+          "kind": "transient_tool",
+          "recovery_ms": 43.0
+        }
+      ]
+    },
+    {
+      "scenario": "manual_rework",
+      "completed": true,
+      "manually_reworked": true,
+      "failures": [
+        {
+          "kind": "constraint_repair",
+          "recovery_ms": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "manual_rework",
+      "completed": true,
+      "manually_reworked": true,
+      "failures": [
+        {
+          "kind": "constraint_repair",
+          "recovery_ms": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "configuration_failure",
+      "completed": false,
+      "manually_reworked": false,
+      "failures": [
+        {
+          "kind": "configuration_error",
+          "recovery_ms": null
+        }
+      ]
+    },
+    {
+      "scenario": "configuration_failure",
+      "completed": false,
+      "manually_reworked": false,
+      "failures": [
+        {
+          "kind": "configuration_error",
+          "recovery_ms": null
+        }
+      ]
+    },
+    {
+      "scenario": "persistent_tool_failure",
+      "completed": false,
+      "manually_reworked": false,
+      "failures": [
+        {
+          "kind": "persistent_tool_failure",
+          "recovery_ms": null
+        }
+      ]
+    },
+    {
+      "scenario": "persistent_tool_failure",
+      "completed": false,
+      "manually_reworked": false,
+      "failures": [
+        {
+          "kind": "persistent_tool_failure",
+          "recovery_ms": null
+        }
+      ]
+    }
+  ],
+  "benchmark": {
+    "mode": "offline deterministic demo",
+    "scenario_counts": {
+      "baseline": 3,
+      "transient_retry": 3,
+      "manual_rework": 2,
+      "configuration_failure": 2,
+      "persistent_tool_failure": 2
+    }
+  }
+}

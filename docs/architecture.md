@@ -70,3 +70,12 @@ Offline demo mode uses deterministic translations so the complete workflow can
 be evaluated without external credentials. The interface labels this as
 `OFFLINE DEMO`. Live model and ASR behavior require provider configuration in
 `.env`.
+
+## Evaluation
+
+`scripts/benchmark_agent.py` runs a deterministic 12-task fault-injection suite
+through the same `JobService` used by the application. It injects transient and
+persistent tool failures, exercises subtitle repair and manual review, and
+classifies terminal failures. The report records task success, manual rework,
+failure-type distribution, and retry recovery time in
+`docs/benchmark-results.json`.
