@@ -1,0 +1,13 @@
+[project]
+name = "videolocalize-agent"
+version = "0.1.0"
+description = "A verifier-in-the-loop subtitle localization agent."
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+filterwarnings = [
+  "ignore:Using .*starlette[.]testclient.*",
+]
